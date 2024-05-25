@@ -1,4 +1,6 @@
 import Phaser from 'phaser';
+import PlayerModel from '../model/PlayerModel';
+import Buttons from '../ui/Buttons';
 
 class GameStart extends Phaser.Scene {
   constructor() {
@@ -6,8 +8,11 @@ class GameStart extends Phaser.Scene {
   }
 
   create() {
-    this.add.text(400, 300, 'Start', { fontSize: '32px', fill: '#fff' }).setOrigin(0.5);
-    this.input.on('pointerdown', () => this.scene.start('GameStart'));
+    this.player = new PlayerModel();
+
+    const buttons = new Buttons(this, 400, 300);
+    buttons.createButton('Start Game', () => this.scene.start('GameSetup'));
+    buttons.createButton('How to Play', () => this.scene.start('HowToPlay'));
   }
 }
 

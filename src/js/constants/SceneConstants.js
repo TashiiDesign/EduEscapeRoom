@@ -1,4 +1,4 @@
-import GameStart from '../scenes/GameStartScene';
+import GameStart from '../scenes/GameStart';
 import GameFinish from '../scenes/GameFinish';
 import HowToPlay from '../scenes/HowToPlay';
 import HomeScene from '../scenes/HomeScene';
@@ -10,6 +10,7 @@ export const KEYS = {
   GameStart: 'GameStart',
   GameFinish: 'GameFinish',
   HowToPlay: 'HowToPlay',
+  GameSetup: 'GameSetup',
   HomeScene: 'HomeScene',
   LaboratoryScene: 'LaboratoryScene',
   CitadelScene: 'CitadelScene',
@@ -20,6 +21,7 @@ export const SCENE_MAP = [
   { key: KEYS.GameStart, state: GameStart },
   { key: KEYS.GameFinish, state: GameFinish },
   { key: KEYS.HowToPlay, state: HowToPlay },
+  { key: KEYS.GameSetup, state: GameSetup },
   { key: KEYS.HomeScene, state: HomeScene },
   { key: KEYS.LaboratoryScene, state: LaboratoryScene },
   { key: KEYS.CitadelScene, state: CitadelScene },

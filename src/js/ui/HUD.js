@@ -1,16 +1,15 @@
-class HUD {
-    constructor(scene) {
-        this.scene = scene;
-    }
+import Phaser from 'phaser';
 
-    createHintButton(callback) {
-        const hintButton = this.scene.add.text(10, 10, 'Hint', { fontSize: '32px', fill: '#fff' });
-        hintButton.setInteractive();
-        hintButton.on('pointerdown', callback);
-        this.hintButton = hintButton;
-    }
+export default class HUD extends Phaser.Scene {
+  constructor() {
+    super({ key: 'HUD' });
+  }
 
-    // Add more HUD elements as needed
+  create() {
+    this.scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#fff' });
+  }
+
+  updateScore(score) {
+    this.scoreText.setText(`Score: ${score}`);
+  }
 }
-
-export default HUD;

@@ -1,8 +1,6 @@
 import Phaser from 'phaser';
 const assetPack = require('../../assets/assetpack.json');
-const FONT_BASE = 'Arial';  // Replace with actual font if needed
 
-// bootGame is called when app is initialized and ready to start doing stuff
 export function bootGame(game, callback) {
   game.scene.add('BootScene', BootScene);
   game.scene.start('BootScene');

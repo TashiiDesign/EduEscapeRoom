@@ -7,7 +7,7 @@ class HowToPlay extends Phaser.Scene {
 
   create() {
     this.add.text(400, 300, 'How To Play', { fontSize: '32px', fill: '#fff' }).setOrigin(0.5);
-    this.input.on('pointerdown', () => this.scene.start('HowToPlay'));
+    this.input.on('pointerdown', () => this.scene.start('GameStart'));
   }
 }
 

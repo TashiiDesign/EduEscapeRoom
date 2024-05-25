@@ -7,7 +7,7 @@ class GameFinish extends Phaser.Scene {
 
   create() {
     this.add.text(400, 300, 'Game Finish', { fontSize: '32px', fill: '#fff' }).setOrigin(0.5);
-    this.input.on('pointerdown', () => this.scene.start('End'));
+    this.input.on('pointerdown', () => this.scene.start('GameStart'));
   }
 }
 
