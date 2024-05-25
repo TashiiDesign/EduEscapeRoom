@@ -25,15 +25,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     { from: 'assets_src/scenes', to: 'src/assets/scenes' },
-    //     { from: 'assets_src/ui', to: 'src/assets/ui' },
-    //     { from: 'assets_src/music', to: 'src/assets/music' },
-    //     { from: 'assets_src/fonts', to: 'src/assets/fonts' },
-    //     { from: 'assets_src/common.json', to: 'src/assets/common.json' },
-    //   ],
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'assets_src/scenes', to: 'src/assets/scenes' },
+        { from: 'assets_src/ui', to: 'src/assets/ui' },
+        // { from: 'assets_src/music', to: 'src/assets/music' },
+      ],
+    }),
   ],
   devServer: {
     static: path.join(__dirname, 'dist'),

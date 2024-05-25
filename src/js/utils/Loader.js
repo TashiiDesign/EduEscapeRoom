@@ -1,18 +1,17 @@
 import Phaser from 'phaser';
-const assetPack = require('../../assets/assetpack.json');
 
 export function bootGame(game, callback) {
   game.scene.add('BootScene', BootScene);
   game.scene.start('BootScene');
 
-  // BootScene to handle initial loading
   class BootScene extends Phaser.Scene {
     constructor() {
       super('BootScene');
     }
 
     preload() {
-      this.load.pack('boot', assetPack, 'boot');
+      // Load assets needed for the loading screen
+      this.load.image('loading_btn', 'assets/ui/loading_bg.png');
     }
 
     create() {
@@ -20,15 +19,18 @@ export function bootGame(game, callback) {
     }
   }
 
-  // LoadScene to handle main loading with progress
   class LoadScene extends Phaser.Scene {
     constructor() {
       super('LoadScene');
     }
 
     preload() {
-      this.load.pack('preload_ui', assetPack, 'preload_ui');
-      this.load.pack('background', assetPack, 'background');
+      // Load main assets directly
+      this.load.image('start_scene_bg', 'assets/scenes/start_scene/bg/start_scene_bg');
+    //   this.load.audio('background_music', 'assets/scenes/bedroom/sounds/background_music.mp3');
+    //   this.load.image('lab_bg', 'assets/scenes/laboratory/graphics/lab_bg.png');
+    //   this.load.audio('lab_music', 'assets/scenes/laboratory/sounds/lab_music.mp3');
+    //   this.load.atlas('characters', 'assets/spritesheets/characters.png', 'assets/spritesheets/characters.json');
 
       const progressBar = this.add.graphics();
       this.load.on('progress', (value) => {

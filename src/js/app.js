@@ -1,12 +1,12 @@
 import Phaser from 'phaser';
 import { SCENE_MAP } from './constants/SceneConstants';
-import { bootGame, assetsLoaded } from './utils/Loader.js'
+import { bootGame, assetsLoaded } from './utils/Loader';
 
 // Main game configuration
 const config = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 600,
+  width: 1920,
+  height: 1080,
   physics: {
     default: 'arcade',
     arcade: {
