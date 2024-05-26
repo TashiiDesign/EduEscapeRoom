@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import { SCENE_MAP } from './constants/SceneConstants';
-import { bootGame, assetsLoaded } from './utils/Loader';
+import { bootGame, assetsLoaded } from './boot.js'
 
 // Main game configuration
 const config = {

@@ -3,10 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+  mode: "production",
   entry: './src/js/app.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    
   },
   module: {
     rules: [
@@ -27,8 +29,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'assets_src/scenes', to: 'src/assets/scenes' },
-        { from: 'assets_src/ui', to: 'src/assets/ui' },
+        { from: 'assets_src/spritesheets', to: 'src/assets/spritesheets' },
+        { from: 'assets_src/fonts', to: 'src/assets/fonts' },
         // { from: 'assets_src/music', to: 'src/assets/music' },
       ],
     }),
@@ -39,5 +41,18 @@ module.exports = {
     port: 9000,
     hot: true,
     open: true,
+    client: {
+      overlay: {
+        warnings: false,
+        errors: true,
+      },
+    },
+  },
+  stats: {
+    all: false,
+    warnings: false,
+    errors: true,
+    errorDetails: true,
   },
 };
+  
