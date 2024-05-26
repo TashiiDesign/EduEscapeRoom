@@ -29,7 +29,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'assets_src/spritesheets', to: 'src/assets/spritesheets' },
+        { from: 'assets/spritesheets', to: 'dist/assets/spritesheets' },
         { from: 'assets_src/fonts', to: 'src/assets/fonts' },
         // { from: 'assets_src/music', to: 'src/assets/music' },
       ],
